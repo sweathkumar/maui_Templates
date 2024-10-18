@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourNamespace.EmailPage"
+             Title="Update Email">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Email Address" FontSize="Medium"/>
+            <Entry Text="{Binding Email}" Placeholder="Enter your email" />
+            <Button Text="Update Email"
+                    Command="{Binding UpdateEmailCommand}"
+                    IsEnabled="{Binding IsUpdating, Converter={StaticResource InverseBooleanConverter}}"/>
+            <Label Text="{Binding IsUpdating, Converter={StaticResource BoolToStringConverter}}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
